@@ -21,11 +21,12 @@ int main()
 	scanf("%d", &high_input);
 	rand_num = (rand() % high_input); 
 	clear();
-	
+	int attemps = 0;
 	while (win == 0)
 	{
 		printf("Guess: ");
 		scanf("%d", &guess);
+		attemps++;
 		if(guess > rand_num)
 		{
 			printf("Your guess is too high!\n");
@@ -38,6 +39,7 @@ int main()
 		{
 			printf("Your guess is right! Congratulations!\n");
 			win = 1;
+			printf("It took you %d attempts to win!\n", attemps);
 		}
 	}	
 	
